@@ -1,20 +1,32 @@
-# Repair Café – React demo
+# Repair Café – interaktivní frontend demo
 
-Ukázkový frontend pro prezentaci semestrálního projektu.
+Prezentační prototyp podle dodaného dokumentu „Repair Café Design.pdf“ a exportů obrazovek. Obsahuje desktopové rozhraní i mobilní náhled, mezi kterými lze přepínat horním přepínačem.
 
-## Spuštění
-1. Nainstalujte Node.js (doporučeno Node 20+).
-2. V kořeni projektu spusťte `npm install`.
-3. Spusťte `npm run dev`.
-4. Otevřete URL z terminálu (obvykle http://localhost:5173).
+## Spuštění lokálně
 
-## Co demo obsahuje
-- přepínání rolí Zákazník / Dobrovolník / Administrátor,
-- přehled a filtrování požadavků,
-- detail požadavku a odeslání zájmu dobrovolníka,
-- vytvoření zákaznického požadavku,
-- výběr dobrovolníka, plánování a dokončení opravy,
-- přehled kalendáře a správu kategorií.
+```bash
+npm install
+npm run dev
+```
 
-## Důležité omezení
-Jde o prezentační prototyp. Data jsou uložena pouze v React state a po obnovení stránky se vrátí na výchozí hodnoty. Neobsahuje backend, databázi, autentizaci, autorizaci ani skutečné API volání. Tyto části jsou součástí cílové architektury projektu a musí být doplněny samostatně.
+Pro produkční sestavení:
+
+```bash
+npm run build
+```
+
+## Co lze v demu vyzkoušet
+
+- přepínání náhledu Desktop / Mobil;
+- přepínání rolí Dobrovolník / Zákazník / Administrátor;
+- procházení a filtrování dostupných oprav;
+- detail požadavku, projevení zájmu, výběr dobrovolníka;
+- vytvoření požadavku, plánování termínu a zaznamenání výsledku opravy;
+- jednoduchý kalendář a správu kategorií.
+
+## Poznámky
+
+- Jde o frontendový prototyp s lokálním stavem v prohlížeči. Data se neukládají do databáze a nejsou sdílena mezi uživateli.
+- Přihlášení, autorizace, OAuth, auditní log, API a skutečné nahrávání fotografií nejsou implementovány.
+- Logo a fotografie produktů jsou výřezy z dodaného návrhového PDF, aby vizuální styl odpovídal návrhu.
+- Mobilní zobrazení je samostatný náhled stejné aplikace s responzivním rozložením; tlačítko v horní liště přepíná mezi desktopovou a mobilní šířkou.
