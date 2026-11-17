@@ -1,6 +1,6 @@
 import React, { useMemo, useState } from 'react';
 import { createRoot } from 'react-dom/client';
-import { Search, Grid2X2, Wrench, Users, Bell, ChevronDown, ChevronLeft, ChevronRight, CalendarDays, UserRound, LockKeyhole, Handshake, ArrowRight, Plus, Menu, X, LayoutDashboard, ClipboardList, CheckCircle2, Clock3, ImagePlus, SlidersHorizontal, Coffee, Settings, Smartphone, Monitor, HeartHandshake } from 'lucide-react';
+import { Search, Grid2X2, Wrench, Users, Bell, ChevronDown, ChevronLeft, ChevronRight, CalendarDays, UserRound, LockKeyhole, Handshake, ArrowRight, ArrowDown, Plus, Menu, X, LayoutDashboard, ClipboardList, CheckCircle2, Clock3, ImagePlus, SlidersHorizontal, Coffee, Settings, Smartphone, Monitor, HeartHandshake } from 'lucide-react';
 import './style.css';
 import logo from './assets/repair-cafe-logo.png';
 import radio from './assets/radio.jpg';
@@ -38,7 +38,7 @@ function App(){
   <div className="previewbar"><div className="previewbrand"><span className="previewdot"><Coffee size={16}/></span><b>REPAIR CAFÉ</b><span className="previewlabel">INTERAKTIVNÍ PROTOTYP</span></div><div className="device-switch"><button className={device==='desktop'?'selected':''} onClick={()=>setDevice('desktop')}><Monitor size={16}/> Desktop</button><button className={device==='mobile'?'selected':''} onClick={()=>setDevice('mobile')}><Smartphone size={16}/> Mobil</button></div><div className="previewnote">Přepnutí náhledu zařízení</div></div>
   <div className={'device-stage '+(device==='mobile'?'mobile-stage':'')}><div className={'app '+(device==='mobile'?'mobile-app':'')}>
    {page!=='O nás'&&<header className="topnav"><button className="hamb" onClick={()=>setMobileNav(!mobileNav)} aria-label="Menu"><Menu/></button><img src={logo} className="logo"/><div className={'mainnav '+(mobileNav?'nav-open':'')}>{nav.map(n=><button key={n} className={page===n?'active':''} onClick={()=>go(n)}>{navIcon(n)}<span>{n}</span></button>)}{role==='Zákazník'&&<button onClick={()=>go('Vytvořit požadavek')} className={page==='Vytvořit požadavek'?'active':''}><Plus/><span>Vytvořit požadavek</span></button>}</div><div className="top-actions"><button className="iconbtn" onClick={()=>notify('Nemáte nová oznámení.')}><Bell/><i/></button><div className="user-menu"><span className="user-avatar"><UserRound size={16}/></span><select aria-label="Demo role" value={role} onChange={e=>{setRole(e.target.value);go(e.target.value==='Zákazník'?'Moje požadavky':e.target.value==='Administrátor'?'Přehled':'Dostupné opravy')}}><option>Dobrovolník</option><option>Zákazník</option><option>Administrátor</option></select><ChevronDown size={14}/></div></div></header>}
-   {page==='O nás'?<Landing onCustomer={()=>{setRole('Zákazník');go('Vytvořit požadavek')}} onVolunteer={()=>{setRole('Dobrovolník');go('Dostupné opravy')}}/>:
+   {page==='O nás'?<Landing onCustomer={()=>{setRole('Zákazník');go('Vytvořit požadavek')}} onVolunteer={()=>{setRole('Dobrovolník');go('Dostupné opravy')}} onLogin={()=>{setRole('Dobrovolník');go('Dostupné opravy')}}/>:
    page==='Vytvořit požadavek'?<main className="page-area"><button className="backlink" onClick={()=>go('Moje požadavky')}><ChevronLeft size={15}/> Zpět na Moje požadavky</button><div className="page-title"><div><h1>Vytvořit požadavek</h1><p>Popište, co potřebujete opravit. Dobrovolníci se vám mohou ozvat.</p></div></div><div className="create-layout"><div className="panel form-panel"><h2>Informace o opravě</h2><label>Název požadavku<input value={form.title} onChange={e=>setForm({...form,title:e.target.value})} placeholder="Např. Nefunkční rádio"/></label><label>Kategorie<select value={form.category} onChange={e=>setForm({...form,category:e.target.value})}>{categories.map(c=><option key={c}>{c}</option>)}</select></label><label>Popis problému<textarea rows="5" value={form.desc} onChange={e=>setForm({...form,desc:e.target.value})} placeholder="Popište příznaky, co jste již zkoušeli a kdy se vám hodí oprava."/></label><div className="upload"><ImagePlus/><span><b>Přidat fotografii</b><small>Nepovinné · JPG nebo PNG</small></span><button className="btn-light" onClick={()=>notify('Nahrávání fotografie bude doplněno.')}>Vybrat soubor</button></div></div><div className="panel form-panel"><h2>Kontaktní údaje</h2><p className="muted">Vyplňte alespoň jeden způsob, jak vás může dobrovolník kontaktovat.</p><label>E-mail nebo telefon<input value={form.contact} onChange={e=>setForm({...form,contact:e.target.value})} placeholder="vas@email.cz nebo telefon"/></label><div className="privacy-note"><LockKeyhole/><span><b>Vaše soukromí je chráněno</b><small>Kontaktní údaje uvidí pouze dobrovolník, jehož zájem o opravu schválíte.</small></span></div><div className="form-actions"><button className="btn-light" onClick={()=>go('Moje požadavky')}>Zrušit</button><button className="btn-primary" onClick={createRequest}>Vytvořit požadavek <ArrowRight size={16}/></button></div></div></div></main>:
    page==='Správa kategorií'?<main className="page-area"><div className="page-title"><div><div className="eyebrow">ADMINISTRACE</div><h1>Správa kategorií</h1><p>Spravujte kategorie, do kterých se řadí požadavky na opravu.</p></div><button className="btn-primary" onClick={()=>setModal('category')}><Plus size={16}/> Přidat kategorii</button></div><div className="panel category-list">{categories.map((c,i)=><div className="category-row" key={c}><span className="cat-icon">{['⌘','♧','▱','▣','⚒'][i%5]}</span><div><b>{c}</b><small>Aktivní kategorie</small></div><span className="active-pill">Aktivní</span></div>)}</div></main>:
    page==='Přehled'?<main className="page-area"><div className="page-title"><div><div className="eyebrow">ADMINISTRACE</div><h1>Přehled</h1><p>Základní přehled komunitních oprav.</p></div></div><div className="stats"><Stat icon={<ClipboardList/>} value={requests.length} label="Požadavků celkem"/><Stat icon={<Clock3/>} value={requests.filter(r=>r.status==='Otevřeno').length} label="Otevřené požadavky"/><Stat icon={<CheckCircle2/>} value={requests.filter(r=>r.status==='Dokončeno').length} label="Dokončené opravy"/></div></main>:
@@ -61,18 +61,31 @@ function RequestCard({item,onOpen}){return <article className="request-card"><di
 function Info({icon,label,value}){return <div className="info-row"><span>{icon}</span><small>{label}</small><b>{value}</b></div>}
 function Stat({icon,value,label}){return <div className="stat-card"><span>{icon}</span><b>{value}</b><small>{label}</small></div>}
 function CalendarPage({requests}){return <main className="page-area"><div className="page-title"><div><div className="eyebrow">DOBROVOLNÍK</div><h1>Kalendář oprav</h1><p>Přehled naplánovaných a dokončených oprav.</p></div></div><div className="panel calendar-panel"><div className="calendar-head"><button><ChevronLeft/></button><b>Listopad 2026</b><button><ChevronRight/></button></div><div className="calendar-grid">{['Po','Út','St','Čt','Pá','So','Ne',...Array.from({length:30},(_,i)=>String(i+1))].map((d,i)=><div className={i===22?'calendar-event':''} key={i}>{d}{i===22&&<small>Oprava židle<br/>10:00</small>}</div>)}</div></div></main>}
-function Landing({onCustomer,onVolunteer}){
+function Landing({onCustomer,onVolunteer,onLogin}){
  return <main className="figma-landing">
-  <section className="figma-hero">
-   <img className="figma-hero-complete" src={new URL('./assets/landing-hero.jpg', import.meta.url).href} alt="Úvodní stránka Repair Café podle návrhu Figmy"/>
-   <button className="hero-hotspot hero-hotspot-repair" aria-label="Začít s opravou" onClick={onCustomer}/>
-   <a className="hero-hotspot hero-hotspot-how" aria-label="Jak to funguje" href="#jak-to-funguje"/>
+  <header className="landing-header">
+   <a className="landing-brand" href="#top" aria-label="Repair Café – úvod"><img src={logo} alt="Repair Café"/></a>
+   <span className="landing-header-divider"/>
+   <button className="landing-about" onClick={()=>document.getElementById('landing-about')?.scrollIntoView({behavior:'smooth'})}>O nás</button>
+   <button className="landing-login" onClick={onLogin}><UserRound/><span>Přihlásit se</span></button>
+  </header>
+  <section className="figma-hero" id="top">
+   <img className="figma-hero-photo" src={new URL('./assets/landing-hero-photo.png', import.meta.url).href} alt="Kavárenská dílna s nářadím a šálkem kávy"/>
+   <div className="figma-hero-overlay"/>
+   <div className="landing-hero-copy">
+    <h1>Dejme věcem druhou šanci.</h1>
+    <p>Repair Café propojuje lidi, kteří potřebují něco opravit,<br className="desktop-break"/> s dobrovolníky, kteří jim rádi pomohou.</p>
+    <div className="landing-hero-actions">
+     <button className="landing-primary" onClick={onCustomer}><Wrench/> Začít s opravou</button>
+     <a className="landing-secondary" href="#jak-to-funguje">Jak to funguje? <ArrowDown/></a>
+    </div>
+   </div>
   </section>
   <section className="figma-how" id="jak-to-funguje">
    <h2><span>✳</span> Jak to funguje? <span>✳</span></h2>
    <img className="figma-workflow-image" src={new URL('./assets/landing-workflow.jpg', import.meta.url).href} alt="Tři kroky opravy: popište problém, vyberte dobrovolníka, domluvte opravu"/>
   </section>
-  <section className="figma-landing-cards">
+  <section className="figma-landing-cards" id="landing-about">
    <article className="figma-landing-card"><img src={new URL('./assets/landing-radio.jpg', import.meta.url).href} alt="Vintage rádio"/><div><h3><Wrench size={15}/> Potřebuji opravu</h3><p>Máte doma něco rozbitého? Popište svůj problém a dejte dobrovolníkům možnost vám pomoci.</p><button onClick={onCustomer}>Vytvořit požadavek <ArrowRight size={14}/></button></div></article>
    <article className="figma-landing-card"><img src={new URL('./assets/landing-volunteer.jpg', import.meta.url).href} alt="Dobrovolník opravuje elektroniku"/><div><h3><Users size={15}/> Chci pomáhat</h3><p>Baví vás opravování? Zapojte se jako dobrovolník a pomozte dát rozbitým věcem druhou šanci.</p><button onClick={onVolunteer}>Jak se stát dobrovolníkem <ArrowRight size={14}/></button></div></article>
   </section>

@@ -174,3 +174,45 @@ input,select,textarea{border-radius:5px}
 .logo{width:190px;height:48px;object-fit:contain;object-position:left center}
 .mobile-app .topnav{background:#003b2a}
 .mobile-app .logo{width:140px;height:36px}
+
+/* Rebuilt public landing hero: sharp photography, live text and working controls */
+.figma-landing{padding:0 0 28px;background:#fbf5e9;color:#073f2e}
+.landing-header{height:82px;background:#003b2a;color:#fff;display:flex;align-items:center;padding:0 clamp(22px,4.2vw,78px);gap:28px}
+.landing-brand{display:flex;align-items:center;height:100%;text-decoration:none;flex:0 0 auto}
+.landing-brand img{display:block;width:330px;height:72px;object-fit:contain;object-position:left center}
+.landing-header-divider{height:42px;width:1px;background:#ffffff80;margin:0 10px}
+.landing-about{border:0;border-radius:40px;background:#315844;color:#fff;padding:13px 42px;font-size:20px;font-weight:650;cursor:pointer}
+.landing-login{margin-left:auto;display:flex;align-items:center;gap:14px;border:0;background:transparent;color:white;font-size:20px;font-weight:650;cursor:pointer}
+.landing-login svg{width:34px;height:34px;stroke-width:1.8}
+.figma-hero{height: min(39vw,680px);min-height:470px;position:relative;overflow:hidden;background:#172b1c;border-radius:0;color:#fff}
+.figma-hero-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 55%;display:block}
+.figma-hero-overlay{position:absolute;inset:0;background:linear-gradient(90deg,rgba(8,18,8,.72) 0%,rgba(8,18,8,.55) 39%,rgba(8,18,8,.08) 72%,transparent 100%)}
+.landing-hero-copy{position:absolute;left:clamp(28px,4.3vw,82px);top:50%;transform:translateY(-50%);max-width:62%;z-index:2}
+.landing-hero-copy h1{font-size:clamp(34px,4vw,68px);line-height:1.08;letter-spacing:-.025em;margin:0 0 22px;font-weight:800;color:#fff}
+.landing-hero-copy p{font-size:clamp(17px,1.8vw,30px);line-height:1.5;margin:0 0 42px;color:#fff}
+.landing-hero-actions{display:flex;align-items:center;gap:28px;flex-wrap:wrap}
+.landing-primary,.landing-secondary{min-height:68px;padding:0 34px;border-radius:24px;display:inline-flex;align-items:center;justify-content:center;gap:15px;font-size:clamp(16px,1.5vw,24px);font-weight:750;text-decoration:none;cursor:pointer}
+.landing-primary{background:#f5f2df;color:#073f2e;border:2px solid #f5f2df}
+.landing-primary svg{width:27px;height:27px}
+.landing-secondary{background:rgba(0,0,0,.18);color:#fff;border:2px solid #fff}
+.landing-secondary svg{width:25px;height:25px}
+.landing-about:hover,.landing-login:hover{filter:brightness(1.12)}
+.landing-primary:hover{background:#fff}
+.landing-secondary:hover{background:rgba(255,255,255,.16)}
+@media(max-width:700px){
+ .landing-header{height:60px;padding:0 12px;gap:10px}
+ .landing-brand img{width:178px;height:52px}
+ .landing-header-divider{height:30px;margin:0 2px}
+ .landing-about{padding:8px 15px;font-size:13px}
+ .landing-login{gap:5px;font-size:12px}
+ .landing-login svg{width:24px;height:24px}
+ .figma-hero{height:520px;min-height:0}
+ .figma-hero-photo{object-position:62% center}
+ .figma-hero-overlay{background:linear-gradient(90deg,rgba(8,18,8,.72),rgba(8,18,8,.48) 62%,rgba(8,18,8,.18))}
+ .landing-hero-copy{left:20px;right:20px;max-width:none;top:46%;transform:translateY(-50%)}
+ .landing-hero-copy h1{font-size:35px;margin-bottom:14px}
+ .landing-hero-copy p{font-size:17px;line-height:1.45;margin-bottom:26px}
+ .desktop-break{display:none}
+ .landing-hero-actions{gap:12px;align-items:stretch;flex-direction:column;max-width:270px}
+ .landing-primary,.landing-secondary{min-height:54px;padding:0 18px;border-radius:17px;font-size:16px}
+}
