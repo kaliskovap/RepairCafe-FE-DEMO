@@ -1,26 +1,21 @@
-# Repair Café – React demo (Figma-aligned)
+# Repair Café – interaktivní frontend demo
 
-## Run locally
-1. Extract the ZIP.
-2. Open the project folder in a terminal.
-3. Run `npm install`.
-4. Run `npm run dev`.
-5. Open the local URL printed by Vite (normally http://localhost:5173).
+## Spuštění
+```bash
+npm install
+npm run dev
+```
 
-## Build for Vercel
-- Framework preset: Vite
-- Build command: `npm run build`
-- Output directory: `dist`
+## Co demo obsahuje
+- Přepínání desktop / mobil.
+- Přepínání rolí Dobrovolník, Zákazník a Administrátor.
+- Veřejnou úvodní stránku podle exportu Figmy.
+- Dostupné opravy, vyhledávání, kategorie a řazení.
+- Detail požadavku, projevení zájmu a schválení dobrovolníka.
+- Vytvoření požadavku včetně lokálního náhledu nahrané fotografie.
+- Zákaznický přehled požadavků, plánování termínu a zrušení požadavku.
+- Přehled oprav dobrovolníka, kalendář a dokončení opravy s výsledkem.
+- Administraci kategorií, dohled nad požadavky a demonstrační správu rolí.
 
-## Demo notes
-- The initial screen is the public Repair Café landing page.
-- The top preview bar switches between desktop and mobile widths.
-- Use the in-app role selector on signed-in screens to switch between volunteer, customer and administrator flows.
-- The interface uses local demo data only. It does not connect to a backend, database, OAuth provider or REST API.
-- Source photography and the public landing-page hero/workflow artwork are cropped from the supplied Figma screen exports. The supplied screen exports are desktop designs; the mobile layout is a responsive adaptation, not a separate mobile Figma specification.
-
-
-## Landing page update
-- The public landing hero now uses a dedicated high-resolution photographic background.
-- Hero heading, body copy and buttons are live React/HTML elements (not flattened into a screenshot), so text stays crisp and controls work.
-- The 'O nás' navigation button scrolls to the information/cards section. 'Přihlásit se' enters the volunteer demo view.
+## Poznámka
+Jde o frontendový prototyp s demonstračními daty. Změny se neukládají na server a role nejsou skutečnou bezpečnostní hranicí. Nahraná fotografie se pouze zobrazí v lokálním náhledu prohlížeče; není odesílána na server.
