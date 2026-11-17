@@ -20,3 +20,120 @@
 @media(max-width:700px){.previewbar{height:52px;padding:0 10px;gap:7px}.previewbrand b{font-size:10px}.previewlabel,.previewnote{display:none}.device-switch button{font-size:10px;padding:6px 8px}.device-stage{padding:0 8px;margin-top:10px}.app{border-radius:14px}.topnav{height:56px;padding:0 12px;gap:9px;position:relative}.hamb{display:block;padding:4px}.logo{width:125px;height:38px}.mainnav{display:none;position:absolute;top:56px;left:0;right:0;background:#003b2a;height:auto;z-index:15;padding:8px;flex-direction:column;align-items:stretch}.mainnav.nav-open{display:flex}.mainnav button{justify-content:flex-start;width:100%}.top-actions{margin-left:auto;gap:4px}.user-menu{padding-left:7px;gap:4px}.user-menu select{max-width:82px;font-size:10px}.iconbtn{padding:5px}.page-area{padding:18px 12px 30px}.page-title{align-items:flex-start;flex-direction:column}.page-title h1,.results-head h1{font-size:23px}.browse-layout,.volunteer-layout,.admin-layout{grid-template-columns:1fr;gap:13px}.filters,.volunteer-sidebar,.admin-sidebar{padding:12px;min-height:0}.filter-options{grid-template-columns:repeat(2,minmax(0,1fr))}.request-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.photo-wrap{height:105px}.card-content{padding:8px}.request-card h3{font-size:11px}.request-card p{font-size:9px;min-height:46px}.card-meta{display:none}.card-button{font-size:9px;padding:6px;min-height:31px}.results-head{align-items:flex-start;gap:8px;flex-direction:column}.sort{align-self:flex-end}.list-toolbar{align-items:stretch;flex-direction:column}.tabs{overflow-x:auto;flex-wrap:nowrap}.tabs button{white-space:nowrap}.my-row{flex-wrap:wrap;gap:10px;padding:10px}.my-row>img{width:76px;height:58px}.my-row-main{min-width:calc(100% - 100px)}.my-row .status-pill{margin-left:86px}.my-row .btn-outline{margin-left:auto}.volunteer-sidebar{display:flex;flex-wrap:wrap;gap:5px}.volunteer-sidebar h2{width:100%;margin:0 0 4px}.volunteer-sidebar button{width:auto;padding:9px 10px;font-size:11px}.volunteer-sidebar hr{display:none}.admin-sidebar{display:flex;flex-wrap:wrap;gap:4px}.admin-sidebar h2{width:100%}.admin-sidebar>div{padding:8px 9px;font-size:10px}.admin-sidebar>div svg{width:15px}.stats{grid-template-columns:repeat(2,1fr)}.admin-shortcuts{grid-template-columns:1fr}.create-form-panel{padding:16px}.upload-row{flex-wrap:wrap}.upload-tile,.photo-preview{width:calc(50% - 8px);min-width:130px}.two-col{grid-template-columns:1fr;gap:0}.form-actions{flex-wrap:wrap}.calendar-toolbar{grid-template-columns:1fr auto}.calendar-toolbar h2{grid-column:1/-1;grid-row:1;text-align:center}.calendar-controls{grid-row:2}.calendar-views{grid-row:2}.calendar-cell{min-height:64px;padding:4px;font-size:9px}.calendar-cell small{font-size:7px;padding:3px}.agenda-day{grid-template-columns:1fr}.detail-grid{grid-template-columns:1fr}.detail-aside{order:-1}.detail-image{height:190px}.modal{padding:22px 16px}.person-row{flex-wrap:wrap}.person-row .btn-primary{margin-left:44px}.category-row{gap:8px}.category-icon{width:42px;height:42px}.category-description small{font-size:10px}.category-row .icon-action{width:34px;height:34px}.table-panel{padding:0 8px}.table-panel table{font-size:10px}.table-panel th,.table-panel td{padding:10px 7px}.landing-header{height:60px;padding:0 12px;gap:10px}.landing-brand img{width:160px;height:50px}.landing-header-divider{height:30px;margin:0 2px}.landing-about{padding:8px 13px;font-size:12px}.landing-login{gap:5px;font-size:11px}.landing-login svg{width:23px;height:23px}.landing-hero{height:500px;min-height:0}.landing-hero-photo{object-position:62% center}.landing-hero-overlay{background:linear-gradient(90deg,rgba(8,18,8,.76),rgba(8,18,8,.52) 62%,rgba(8,18,8,.18))}.landing-hero-copy{left:18px;right:18px;max-width:none;top:48%;transform:translateY(-50%)}.landing-hero-copy h1{font-size:34px;margin-bottom:14px}.landing-hero-copy p{font-size:16px;line-height:1.45;margin-bottom:25px}.desktop-break{display:none}.landing-hero-actions{gap:10px;align-items:stretch;flex-direction:column;max-width:270px}.landing-primary,.landing-secondary{min-height:52px;padding:0 17px;border-radius:16px;font-size:15px}.figma-how{padding:18px 10px 14px}.figma-how h2{font-size:19px;gap:8px;margin-bottom:13px}.figma-workflow-image{border-radius:12px}.figma-landing-cards{grid-template-columns:1fr;gap:10px;padding:0 10px 14px}.figma-landing-card{display:grid;grid-template-columns:40% 1fr}.figma-landing-card>img{height:100%;min-height:145px}.figma-landing-card>div{padding:9px}.figma-landing-card h3{font-size:11px}.figma-landing-card p{font-size:9px}.figma-landing-card button{font-size:8px;padding:6px 8px}.figma-bottom-banner{padding:0 8px 12px}.figma-bottom-banner img{border-radius:14px}}
 
 .success-note{background:#e8f1df;color:#446b39}
+
+
+/* Phone preview: a real narrow layout even while the browser itself is desktop-sized. */
+.mobile-stage{width:430px;max-width:calc(100% - 16px);padding:0;margin:18px auto 0;}
+.mobile-app{width:390px;max-width:100%;min-height:844px;border:8px solid #1e2b23;border-radius:30px;overflow:hidden;container-type:inline-size;container-name:phone;box-shadow:0 16px 45px #17241e35;}
+.mobile-app .figma-landing{min-height:828px;}
+@container phone (max-width:700px){
+.mobile-app .topnav{height:56px;padding:0 12px;gap:9px;position:relative}
+.mobile-app .hamb{display:block;padding:4px}
+.mobile-app .logo{width:125px;height:38px}
+.mobile-app .mainnav{display:none;position:absolute;top:56px;left:0;right:0;background:#003b2a;height:auto;z-index:15;padding:8px;flex-direction:column;align-items:stretch}
+.mobile-app .mainnav.nav-open{display:flex}
+.mobile-app .mainnav button{justify-content:flex-start;width:100%}
+.mobile-app .top-actions{margin-left:auto;gap:4px}
+.mobile-app .user-menu{padding-left:7px;gap:4px}
+.mobile-app .user-menu select{max-width:82px;font-size:10px}
+.mobile-app .iconbtn{padding:5px}
+.mobile-app .page-area{padding:18px 12px 30px}
+.mobile-app .page-title{align-items:flex-start;flex-direction:column}
+.mobile-app .page-title h1,
+.mobile-app .results-head h1{font-size:23px}
+.mobile-app .browse-layout,
+.mobile-app .volunteer-layout,
+.mobile-app .admin-layout{grid-template-columns:1fr;gap:13px}
+.mobile-app .filters,
+.mobile-app .volunteer-sidebar,
+.mobile-app .admin-sidebar{padding:12px;min-height:0}
+.mobile-app .filter-options{grid-template-columns:repeat(2,minmax(0,1fr))}
+.mobile-app .request-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.mobile-app .photo-wrap{height:105px}
+.mobile-app .card-content{padding:8px}
+.mobile-app .request-card h3{font-size:11px}
+.mobile-app .request-card p{font-size:9px;min-height:46px}
+.mobile-app .card-meta{display:none}
+.mobile-app .card-button{font-size:9px;padding:6px;min-height:31px}
+.mobile-app .results-head{align-items:flex-start;gap:8px;flex-direction:column}
+.mobile-app .sort{align-self:flex-end}
+.mobile-app .list-toolbar{align-items:stretch;flex-direction:column}
+.mobile-app .tabs{overflow-x:auto;flex-wrap:nowrap}
+.mobile-app .tabs button{white-space:nowrap}
+.mobile-app .my-row{flex-wrap:wrap;gap:10px;padding:10px}
+.mobile-app .my-row>img{width:76px;height:58px}
+.mobile-app .my-row-main{min-width:calc(100% - 100px)}
+.mobile-app .my-row .status-pill{margin-left:86px}
+.mobile-app .my-row .btn-outline{margin-left:auto}
+.mobile-app .volunteer-sidebar{display:flex;flex-wrap:wrap;gap:5px}
+.mobile-app .volunteer-sidebar h2{width:100%;margin:0 0 4px}
+.mobile-app .volunteer-sidebar button{width:auto;padding:9px 10px;font-size:11px}
+.mobile-app .volunteer-sidebar hr{display:none}
+.mobile-app .admin-sidebar{display:flex;flex-wrap:wrap;gap:4px}
+.mobile-app .admin-sidebar h2{width:100%}
+.mobile-app .admin-sidebar>div{padding:8px 9px;font-size:10px}
+.mobile-app .admin-sidebar>div svg{width:15px}
+.mobile-app .stats{grid-template-columns:repeat(2,1fr)}
+.mobile-app .admin-shortcuts{grid-template-columns:1fr}
+.mobile-app .create-form-panel{padding:16px}
+.mobile-app .upload-row{flex-wrap:wrap}
+.mobile-app .upload-tile,
+.mobile-app .photo-preview{width:calc(50% - 8px);min-width:130px}
+.mobile-app .two-col{grid-template-columns:1fr;gap:0}
+.mobile-app .form-actions{flex-wrap:wrap}
+.mobile-app .calendar-toolbar{grid-template-columns:1fr auto}
+.mobile-app .calendar-toolbar h2{grid-column:1/-1;grid-row:1;text-align:center}
+.mobile-app .calendar-controls{grid-row:2}
+.mobile-app .calendar-views{grid-row:2}
+.mobile-app .calendar-cell{min-height:64px;padding:4px;font-size:9px}
+.mobile-app .calendar-cell small{font-size:7px;padding:3px}
+.mobile-app .agenda-day{grid-template-columns:1fr}
+.mobile-app .detail-grid{grid-template-columns:1fr}
+.mobile-app .detail-aside{order:-1}
+.mobile-app .detail-image{height:190px}
+.mobile-app .modal{padding:22px 16px}
+.mobile-app .person-row{flex-wrap:wrap}
+.mobile-app .person-row .btn-primary{margin-left:44px}
+.mobile-app .category-row{gap:8px}
+.mobile-app .category-icon{width:42px;height:42px}
+.mobile-app .category-description small{font-size:10px}
+.mobile-app .category-row .icon-action{width:34px;height:34px}
+.mobile-app .table-panel{padding:0 8px}
+.mobile-app .table-panel table{font-size:10px}
+.mobile-app .table-panel th,
+.mobile-app .table-panel td{padding:10px 7px}
+.mobile-app .landing-header{height:60px;padding:0 12px;gap:10px}
+.mobile-app .landing-brand img{width:160px;height:50px}
+.mobile-app .landing-header-divider{height:30px;margin:0 2px}
+.mobile-app .landing-about{padding:8px 13px;font-size:12px}
+.mobile-app .landing-login{gap:5px;font-size:11px}
+.mobile-app .landing-login svg{width:23px;height:23px}
+.mobile-app .landing-hero{height:500px;min-height:0}
+.mobile-app .landing-hero-photo{object-position:62% center}
+.mobile-app .landing-hero-overlay{background:linear-gradient(90deg,rgba(8,18,8,.76),rgba(8,18,8,.52) 62%,rgba(8,18,8,.18))}
+.mobile-app .landing-hero-copy{left:18px;right:18px;max-width:none;top:48%;transform:translateY(-50%)}
+.mobile-app .landing-hero-copy h1{font-size:34px;margin-bottom:14px}
+.mobile-app .landing-hero-copy p{font-size:16px;line-height:1.45;margin-bottom:25px}
+.mobile-app .desktop-break{display:none}
+.mobile-app .landing-hero-actions{gap:10px;align-items:stretch;flex-direction:column;max-width:270px}
+.mobile-app .landing-primary,
+.mobile-app .landing-secondary{min-height:52px;padding:0 17px;border-radius:16px;font-size:15px}
+.mobile-app .figma-how{padding:18px 10px 14px}
+.mobile-app .figma-how h2{font-size:19px;gap:8px;margin-bottom:13px}
+.mobile-app .figma-workflow-image{border-radius:12px}
+.mobile-app .figma-landing-cards{grid-template-columns:1fr;gap:10px;padding:0 10px 14px}
+.mobile-app .figma-landing-card{display:grid;grid-template-columns:40% 1fr}
+.mobile-app .figma-landing-card>img{height:100%;min-height:145px}
+.mobile-app .figma-landing-card>div{padding:9px}
+.mobile-app .figma-landing-card h3{font-size:11px}
+.mobile-app .figma-landing-card p{font-size:9px}
+.mobile-app .figma-landing-card button{font-size:8px;padding:6px 8px}
+.mobile-app .figma-bottom-banner{padding:0 8px 12px}
+.mobile-app .figma-bottom-banner img{border-radius:14px}
+}
+/* Sidebar navigation: make every admin navigation item an actual interactive control. */
+.admin-sidebar>button{display:flex;align-items:center;gap:14px;width:100%;border:0;background:transparent;border-radius:9px;padding:14px 16px;margin:4px 0;text-align:left;font:inherit;font-size:13px;color:#4d5650;cursor:pointer;transition:background .15s ease,color .15s ease}
+.admin-sidebar>button svg{width:19px;height:19px;flex:0 0 auto;color:#254a37}
+.admin-sidebar>button:hover{background:#edf1e8;color:#203d2d}
+.admin-sidebar>button.admin-side-current{background:#dce6ce;color:#203d2d;font-weight:700}
+.admin-sidebar>button:focus-visible,.volunteer-sidebar button:focus-visible{outline:3px solid #779a62;outline-offset:2px}

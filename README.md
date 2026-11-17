@@ -19,3 +19,9 @@ npm run dev
 
 ## Poznámka
 Jde o frontendový prototyp s demonstračními daty. Změny se neukládají na server a role nejsou skutečnou bezpečnostní hranicí. Nahraná fotografie se pouze zobrazí v lokálním náhledu prohlížeče; není odesílána na server.
+
+
+## Aktualizace – mobilní náhled a fotografie kola
+- Přepínač Mobil nyní zobrazuje skutečně úzký telefonní layout (390 px) i při otevření dema na desktopu.
+- Mobilní styly se aplikují také na úvodní stránku, navigaci, formuláře, seznamy, kalendář a modální okna.
+- Nízk rozlišení fotografie opravy kola bylo nahrazeno novým ostrým obrázkem ve vysokém rozlišení.
