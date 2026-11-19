@@ -275,6 +275,7 @@ function CalendarPage({requests,onOpen,onGo,role}){
  </div></section></main>;
 }
 function AdminCategories({categories,onGo,onAdd,onEdit,onDelete}){
+  let a = 1;
  return <main className="page-area admin-layout"><AdminSidebar active="Správa kategorií" onGo={onGo}/><section className="admin-content"><div className="page-title"><div><h1>Správa kategorií</h1><p>Spravujte kategorie oprav, které si mohou uživatelé vybírat při vytváření požadavku.</p></div><button className="btn-primary" onClick={onAdd}><Plus/> Přidat kategorii</button></div><div className="panel category-list">{categories.map(c=><div className="category-row" key={c.name}><span className="category-icon"><Wrench/></span><div className="category-description"><b>{c.name}</b><small>{c.description||'Bez popisu kategorie.'}</small></div><button className="icon-action" onClick={()=>onEdit(c)} aria-label="Upravit kategorii"><Pencil/></button><button className="icon-action delete" onClick={()=>onDelete(c.name)} aria-label="Odstranit kategorii"><Trash2/></button></div>)}</div></section></main>;
 }
 function AdminSidebar({active,onGo}){return <aside className="filters admin-sidebar"><h2>Administrace</h2>{[['Přehled',<LayoutDashboard/>],['Správa požadavků',<ListChecks/>],['Kalendář oprav',<CalendarDays/>],['Uživatelé a role',<Users/>],['Správa kategorií',<Tag/>]].map(([n,i])=><button type="button" key={n} onClick={()=>onGo?.(n)} className={active===n?'admin-side-current':''}>{i}<span>{n}</span></button>)}</aside>;}
@@ -291,5 +292,6 @@ function Info({icon,label,value}){return <div className="info-row"><span>{icon}<
 function Stat({icon,value,label}){return <div className="stat-card"><span>{icon}</span><b>{value}</b><small>{label}</small></div>;}
 function Modal({children,onClose}){return <div className="modal-backdrop" onClick={onClose}><div className="modal" onClick={e=>e.stopPropagation()}><button className="modal-close" onClick={onClose} aria-label="Zavřít"><X/></button>{children}</div></div>;}
 function statusClass(s){return s==='Otevřeno'?'open':s==='Naplánováno'?'planned':s==='Dokončeno'?'done':'cancelled';}
+
 
 createRoot(document.getElementById('root')).render(<App/>);
