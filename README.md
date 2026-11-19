@@ -25,3 +25,10 @@ Jde o frontendový prototyp s demonstračními daty. Změny se neukládají na s
 - Přepínač Mobil nyní zobrazuje skutečně úzký telefonní layout (390 px) i při otevření dema na desktopu.
 - Mobilní styly se aplikují také na úvodní stránku, navigaci, formuláře, seznamy, kalendář a modální okna.
 - Nízk rozlišení fotografie opravy kola bylo nahrazeno novým ostrým obrázkem ve vysokém rozlišení.
+
+
+## Aktualizace – samostatná stránka detailu požadavku
+- Detail požadavku se nyní otevírá jako samostatná stránka místo modálního okna.
+- Zpět vede na předchozí přehled, ze kterého byl detail otevřen.
+- Modální okna pro plánování termínu a dokončení opravy zůstávají dostupná přímo z detailu.
+- Fotografie v detailu zachovávají poměr stran (`object-fit: contain`) a mají omezenou výšku, takže se nedeformují ani zbytečně neroztahují.
