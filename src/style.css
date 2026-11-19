@@ -199,3 +199,16 @@
     min-height: 145px;
   }
 }
+
+/* Zarovnání panelu informací s horní hranou fotografie v detailu požadavku.
+   Platí pro zákaznický, dobrovolnický i administrační pohled. */
+@media (min-width: 701px) {
+  .request-detail-page .detail-aside {
+    margin-top: clamp(76px, 7vw, 110px);
+  }
+}
+@media (max-width: 700px) {
+  .request-detail-page .detail-aside {
+    margin-top: 0;
+  }
+}
