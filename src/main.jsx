@@ -14,6 +14,7 @@ import logo from './assets/repair-cafe-logo.png';
 import heroPhoto from './assets/landing-hero-photo.png';
 import workflowPhoto from './assets/landing-workflow.jpg';
 import volunteerPhoto from './assets/landing-volunteer.jpg';
+import landingRadio from './assets/landing-radio.jpg';
 import bottomBanner from './assets/landing-bottom.jpg';
 import radio from './assets/radio.jpg';
 import headphones from './assets/headphones.jpg';
@@ -195,7 +196,7 @@ function Landing({onAbout,onLogin,onCustomer,onVolunteer}){
   </section>
   <section className="figma-how" id="jak-to-funguje"><img className="figma-workflow-image" src={workflowPhoto} alt="Tři kroky opravy: popište problém, vyberte dobrovolníka a domluvte opravu"/></section>
   <section className="figma-landing-cards">
-   <article className="figma-landing-card"><img src={radio} alt="Staré rádio připravené k opravě"/><div><h3><Wrench/> Potřebuji opravu</h3><p>Máte doma něco rozbitého? Popište svůj problém a dejte dobrovolníkům možnost vám pomoci.</p><button onClick={onCustomer}>Vytvořit požadavek <ArrowRight/></button></div></article>
+   <article className="figma-landing-card"><img src={landingRadio} alt="Staré rádio připravené k opravě"/><div><h3><Wrench/> Potřebuji opravu</h3><p>Máte doma něco rozbitého? Popište svůj problém a dejte dobrovolníkům možnost vám pomoci.</p><button onClick={onCustomer}>Vytvořit požadavek <ArrowRight/></button></div></article>
    <article className="figma-landing-card"><img src={volunteerPhoto} alt="Dobrovolník opravuje elektroniku"/><div><h3><Users/> Chci pomáhat</h3><p>Baví vás opravování? Zapojte se jako dobrovolník a pomozte dát rozbitým věcem druhou šanci.</p><button onClick={onVolunteer}>Jak se stát dobrovolníkem <ArrowRight/></button></div></article>
   </section>
   <section className="figma-bottom-banner" id="o-nas"><img src={bottomBanner} alt="Ne všechno rozbité patří do koše. Opravování šetří materiály a spojuje lidi."/></section>
