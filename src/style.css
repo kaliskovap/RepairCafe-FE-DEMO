@@ -204,7 +204,7 @@
    Platí pro zákaznický, dobrovolnický i administrační pohled. */
 @media (min-width: 701px) {
   .request-detail-page .detail-aside {
-    margin-top: clamp(60px, calc(7vw - 16px), 94px);
+    margin-top: clamp(66px, calc(7vw - 10px), 100px);
   }
 }
 @media (max-width: 700px) {
